@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33103.201
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CJWS", "CJWS\CJWS.csproj", "{B448DA88-6F0F-49A0-89D9-132AFEB7ADA4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataExchangeService", "PrescriptionScenario\DataExchangeService\DataExchangeService.csproj", "{C82732BD-E0CE-4E36-8682-E7AC1CFBA30A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataExchangeClient", "PrescriptionScenario\DataExchangeClient\DataExchangeClient.csproj", "{609C0490-B02C-462C-9179-24129C5DFB98}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrescriptionLibrary", "PrescriptionScenario\PrescriptionLibrary\PrescriptionLibrary.csproj", "{47329533-3348-41BA-B659-2D80E04C8DD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorsApplication", "PrescriptionScenario\DoctorsApplication\DoctorsApplication.csproj", "{9808E7AD-94E5-4176-BE6D-208899500C57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PharmacistsApplication", "PrescriptionScenario\PharmacistsApplication\PharmacistsApplication.csproj", "{51FD3E35-608C-45B4-8E05-4C4C7F7AD2AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B448DA88-6F0F-49A0-89D9-132AFEB7ADA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B448DA88-6F0F-49A0-89D9-132AFEB7ADA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B448DA88-6F0F-49A0-89D9-132AFEB7ADA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B448DA88-6F0F-49A0-89D9-132AFEB7ADA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82732BD-E0CE-4E36-8682-E7AC1CFBA30A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82732BD-E0CE-4E36-8682-E7AC1CFBA30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82732BD-E0CE-4E36-8682-E7AC1CFBA30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82732BD-E0CE-4E36-8682-E7AC1CFBA30A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609C0490-B02C-462C-9179-24129C5DFB98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609C0490-B02C-462C-9179-24129C5DFB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609C0490-B02C-462C-9179-24129C5DFB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609C0490-B02C-462C-9179-24129C5DFB98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47329533-3348-41BA-B659-2D80E04C8DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47329533-3348-41BA-B659-2D80E04C8DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47329533-3348-41BA-B659-2D80E04C8DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47329533-3348-41BA-B659-2D80E04C8DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9808E7AD-94E5-4176-BE6D-208899500C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9808E7AD-94E5-4176-BE6D-208899500C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9808E7AD-94E5-4176-BE6D-208899500C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9808E7AD-94E5-4176-BE6D-208899500C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FD3E35-608C-45B4-8E05-4C4C7F7AD2AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FD3E35-608C-45B4-8E05-4C4C7F7AD2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FD3E35-608C-45B4-8E05-4C4C7F7AD2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FD3E35-608C-45B4-8E05-4C4C7F7AD2AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB65214D-1850-45CE-836E-85AE4E33C816}
+	EndGlobalSection
+EndGlobal
