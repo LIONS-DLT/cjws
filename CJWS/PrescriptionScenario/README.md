@@ -18,4 +18,4 @@ This scenario implements the following applications and libraries:
 
 ### Requirements
 
-To test this process a valid PKI certificate is required.
+To test this process a valid PKI certificate is required. The data exchange service must be running and the corresponding URLs must be changed within the application source codes.
