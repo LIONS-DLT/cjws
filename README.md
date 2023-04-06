@@ -15,6 +15,8 @@ In this project two types of Certificate-based Json Web Signatures are defined:
 
 The german T-prescription was implemented as an application scenario, since it involves special requirements for signatures, data protection and data transfer. For this scenario, all the necessary applications and libraries are implemented in simple form.
 
+[-> Prescription Scenario](CJWS/PrescriptionScenario/README.md)
+
 # CJWS v1
 
 
