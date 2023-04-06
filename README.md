@@ -59,7 +59,7 @@ The content type in the header should be set accordingly.
 The digital signature (of header + '.' + payload) as base64 encoded byte array.
 
 The contained certificate should be validated against its X.509 chain. <br />
-It also allows validating the digital signature for the given payload.
+It also allows validating the digital signature for the given header and payload.
 
 A document is valid if the certificate and digital signature are valid.
 
@@ -114,6 +114,6 @@ Valid values are: RS256, RS384, RS512, ES256, ES384, ES512.
 - **day**: The signature date as string in yyyy/MM/dd format.
 
 The contained certificate should be validated against its X.509 chain. <br />
-It also allows validating the digital signature for the given payload.
+It also allows validating the digital signature for the given header, payload and date.
 
 A document is valid if ALL certificates and digital signatures are valid.
