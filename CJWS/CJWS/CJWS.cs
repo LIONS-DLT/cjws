@@ -9,7 +9,7 @@ namespace CJWS
 {
     public abstract class CJWS
     {
-        public byte[] Header { get; set; } = new byte[0];
+        public virtual byte[] Header { get; set; } = new byte[0];
 
         public byte[] Payload { get; set; } = new byte[0];
 
@@ -182,7 +182,7 @@ namespace CJWS
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum CJWSAlgorithm
     {
-        // HMAC (HS256, HS384, HS512) not usable because the receiver must have the secret.
+        // HMAC (HS256, HS384, HS512) not usable because the receiver would need the secret.
 
         // RSA
         RS256,

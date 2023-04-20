@@ -11,7 +11,7 @@ namespace CJWS
     public class CJWS2Header : ICJWSHeader
     {
         /// <summary>
-        /// The type of the document (should always be 'jwd').
+        /// The type of the document (should always be 'cjws2').
         /// </summary>
         [JsonPropertyName("typ")]
         public string Type { get; set; } = "cjws2";

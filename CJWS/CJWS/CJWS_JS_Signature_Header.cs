@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace CJWS
 {
-    public class CJWS1Header : ICJWSCertificateInfo, ICJWSHeader
+    public class CJWS_JS_Signature_Header : ICJWSCertificateInfo
     {
         /// <summary>
-        /// The type of the document (should always be 'cjws1').
+        /// The type of the document (should always be 'cjws-js').
         /// </summary>
         [JsonPropertyName("typ")]
-        public string Type { get; set; } = "cjws1";
+        public string Type { get; set; } = "cjws-js";
 
         /// <summary>
         /// The content type of the document (json for serialized objects as payload, binary for anything else).
@@ -41,9 +41,9 @@ namespace CJWS
         public string Date { get; set; } = DateTime.Now.ToString("yyyy/MM/dd");
 
         /// <summary>
-        /// The certificate file (x5c) as byte array.
+        /// The certificate file (crt) as byte array.
         /// </summary>
-        [JsonPropertyName("x5c")]
+        [JsonPropertyName("crt")]
         public byte[] Certificate { get; set; } = new byte[0];
 
         /// <summary>
@@ -65,21 +65,21 @@ namespace CJWS
         }
 
         /// <summary>
-        /// Serializes the CJWS2Header object to a URL-encoded base64 string.
+        /// Serializes the CJWS_JS_Signature_Header object to a URL-encoded base64 string.
         /// </summary>
         public override string ToString()
         {
-            return CJWS1.EncodeUrlBase64(Encoding.UTF8.GetBytes(this.ToJsonString()));
+            return CJWS.EncodeUrlBase64(Encoding.UTF8.GetBytes(this.ToJsonString()));
         }
 
         /// <summary>
         /// Deserializes a URL-encoded base64 string to a CJWS2Header object.
         /// </summary>
-        public static CJWS1Header FromString(string headerString)
+        public static CJWS_JS_Signature_Header FromString(string headerString)
         {
-            byte[] data = CJWS2.DecodeUrlBase64(headerString);
+            byte[] data = CJWS.DecodeUrlBase64(headerString);
             string json = Encoding.UTF8.GetString(data);
-            return JsonSerializer.Deserialize<CJWS1Header>(json, new JsonSerializerOptions()
+            return JsonSerializer.Deserialize<CJWS_JS_Signature_Header>(json, new JsonSerializerOptions()
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 WriteIndented = false,
@@ -90,15 +90,14 @@ namespace CJWS
         {
             return Encoding.UTF8.GetBytes(this.ToJsonString());
         }
-        public static CJWS1Header FromByteArray(byte[] headerData)
+        public static CJWS_JS_Signature_Header FromByteArray(byte[] headerData)
         {
             string json = Encoding.UTF8.GetString(headerData);
-            return JsonSerializer.Deserialize<CJWS1Header>(json, new JsonSerializerOptions()
+            return JsonSerializer.Deserialize<CJWS_JS_Signature_Header>(json, new JsonSerializerOptions()
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 WriteIndented = false,
             })!;
         }
     }
-
 }

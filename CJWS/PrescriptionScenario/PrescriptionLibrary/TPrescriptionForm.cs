@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PrescriptionLibrary
 {
-    public class TPrescriptionForm : TPrescriptionCarbonCopy
+    public class TPrescriptionForm : TPrescriptionFormBase
     {
         public string PatientFirstName { get; set; } = string.Empty;
         public string PatientLastName { get; set; } = string.Empty;
@@ -27,8 +27,12 @@ namespace PrescriptionLibrary
 
             foreach(PropertyInfo property in copy.GetType().GetProperties())
             {
-                object? val = this.GetType().GetProperty(property.Name)!.GetValue(this);
-                property.SetValue(copy, val);
+                PropertyInfo? originalPropery = this.GetType().GetProperty(property.Name);
+                if (originalPropery != null)
+                {
+                    object? val = originalPropery.GetValue(this);
+                    property.SetValue(copy, val);
+                }
             }
 
             //foreach (TPrescriptionItem item in this.PrescriptionItems)
