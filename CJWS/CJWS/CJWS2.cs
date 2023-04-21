@@ -12,6 +12,10 @@ using System.Net.Mime;
 
 namespace CJWS
 {
+    /// <summary>
+    /// Class for the serialization/deserialization of an extended JWS in compact serialization using the CJWS ruleset for multiple signatures.
+    /// This format is NOT compatible with the JWS specification.
+    /// </summary>
     public class CJWS2 : CJWS
     {
         public CJWS2() 

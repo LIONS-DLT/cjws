@@ -144,26 +144,49 @@ namespace CJWS
 
         public static CJWSHeaderInfo ExtractHeaderFromString(string cjwsString)
         {
-            string header = cjwsString.Substring(0, cjwsString.IndexOf('.'));
-            return CJWSHeaderInfo.FromString(header);
+            if (cjwsString.StartsWith("{")) // -> CJWS_JS
+            {
+                // CJWS_JS needs to be deserialized for reading header info
+                var header = CJWS_JS.Deserialize(cjwsString).SharedHeaderParameters;
+                return new CJWSHeaderInfo() { Type = header.Type, ContentType = header.ContentType, DisplayText = header.DisplayText };
+            }
+            else // -> CJWS1 or CJWS2
+            {
+                string header = cjwsString.Substring(0, cjwsString.IndexOf('.'));
+                return CJWSHeaderInfo.FromString(header);
+            }
         }
         public static CJWSHeaderInfo ExtractHeaderFromStream(Stream stream)
         {
             string header = "";
+            bool isJson = false;
+            bool readFirstChar = false;
 
             using (StreamReader rd = new StreamReader(stream))
             {
                 while (!rd.EndOfStream)
                 {
                     char c = (char)rd.Read();
-                    if (c == '.')
+                    if (!readFirstChar)
+                    {
+                        readFirstChar = true;
+                        isJson = c == '{';
+                    }
+
+                    if (!isJson && c == '.')
                         break;
 
                     header += c;
                 }
             }
 
-            return CJWSHeaderInfo.FromString(header);
+            if (isJson)
+            {
+                var cjwsJsHeader = CJWS_JS.Deserialize(header).SharedHeaderParameters;
+                return new CJWSHeaderInfo() { Type = cjwsJsHeader.Type, ContentType = cjwsJsHeader.ContentType, DisplayText = cjwsJsHeader.DisplayText };
+            }
+            else
+                return CJWSHeaderInfo.FromString(header);
         }
         public static CJWSHeaderInfo ExtractHeaderFromFile(string filename)
         {

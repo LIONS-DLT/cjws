@@ -53,7 +53,7 @@ namespace CJWS
         public string CertificateUrl { get; set; } = string.Empty;
 
         /// <summary>
-        /// Serializes the CJWS2Header object to a Json string.
+        /// Serializes the CJWS_JS_Signature_Header object to a Json string.
         /// </summary>
         public string ToJsonString()
         {
@@ -73,7 +73,7 @@ namespace CJWS
         }
 
         /// <summary>
-        /// Deserializes a URL-encoded base64 string to a CJWS2Header object.
+        /// Deserializes a URL-encoded base64 string to a CJWS_JS_Signature_Header object.
         /// </summary>
         public static CJWS_JS_Signature_Header FromString(string headerString)
         {

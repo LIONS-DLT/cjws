@@ -29,7 +29,7 @@ namespace CJWS
         public string DisplayText { get; set; } = string.Empty;
 
         /// <summary>
-        /// Serializes the CJWS_JS_Header object to a Json string.
+        /// Serializes the CJWS_JS_SharedHeaderParameters object to a Json string.
         /// </summary>
         public string ToJsonString()
         {
@@ -41,7 +41,7 @@ namespace CJWS
         }
 
         /// <summary>
-        /// Serializes the CJWS_JS_Header object to a URL-encoded base64 string.
+        /// Serializes the CJWS_JS_SharedHeaderParameters object to a URL-encoded base64 string.
         /// </summary>
         public override string ToString()
         {
@@ -49,7 +49,7 @@ namespace CJWS
         }
 
         /// <summary>
-        /// Deserializes a URL-encoded base64 string to a CJWS_JS_Header object.
+        /// Deserializes a URL-encoded base64 string to a CJWS_JS_SharedHeaderParameters object.
         /// </summary>
         public static CJWS_JS_SharedHeaderParameters FromString(string headerString)
         {

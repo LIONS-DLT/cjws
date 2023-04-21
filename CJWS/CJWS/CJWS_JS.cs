@@ -10,14 +10,27 @@ using System.Threading.Tasks;
 
 namespace CJWS
 {
+    /// <summary>
+    /// Class for the serialization/deserialization of a JWS in JSON serialization using the CJWS ruleset.
+    /// This format is fully compatible with the JWS specification.
+    /// </summary>
     public class CJWS_JS : CJWS
     {
+        /// <summary>
+        /// Should be ignored, since JWS-JS doesn't have a top level header.
+        /// </summary>
         [JsonIgnore]
         public override byte[] Header { get => base.Header; set => base.Header = value; }
 
+        /// <summary>
+        /// Shared header parameters, that are added to the signature headers when using the 'Sign' method.
+        /// </summary>
         [JsonIgnore]
         public CJWS_JS_SharedHeaderParameters SharedHeaderParameters { get; set; } = new CJWS_JS_SharedHeaderParameters();
 
+        /// <summary>
+        /// The signatures of this object
+        /// </summary>
         public List<CJWS_JS_Signature> Signatures { get; set; } = new List<CJWS_JS_Signature>();
 
 
@@ -38,6 +51,9 @@ namespace CJWS
         }
 
 
+        /// <summary>
+        /// Serializes a CJWS_JS to a JSON string.
+        /// </summary>
         public override string Serialize()
         {
             return JsonSerializer.Serialize(this, new JsonSerializerOptions()
@@ -47,6 +63,9 @@ namespace CJWS
             });
         }
 
+        /// <summary>
+        /// Deserializes a CJWS_JS from a JSON string.
+        /// </summary>
         public static CJWS_JS Deserialize(string jsonString)
         {
             CJWS_JS result = JsonSerializer.Deserialize<CJWS_JS>(jsonString, new JsonSerializerOptions()
@@ -69,6 +88,9 @@ namespace CJWS
         }
 
 
+        /// <summary>
+        /// Sign the document using the given certificate and hash algorithm.
+        /// </summary>
         public override void Sign(X509Certificate2 certificate, HashAlgorithmName hashAlgorithm)
         {
             CJWS_JS_Signature signature = new CJWS_JS_Signature();
@@ -125,6 +147,9 @@ namespace CJWS
             this.Signatures.Add(signature);
         }
 
+        /// <summary>
+        /// Verifies all certificates by its X.509 chain and all signatures for the given payload.
+        /// </summary>
         public override bool Verify()
         {
             if (this.Signatures.Count == 0)

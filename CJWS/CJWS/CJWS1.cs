@@ -11,6 +11,10 @@ using System.Reflection.PortableExecutable;
 
 namespace CJWS
 {
+    /// <summary>
+    /// Class for the serialization/deserialization of a JWS in compact serialization using the CJWS ruleset for single signatures.
+    /// This format is fully compatible with the JWS specification.
+    /// </summary>
     public class CJWS1 : CJWS
     {
         public CJWS1Header HeaderObject
