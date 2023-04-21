@@ -8,8 +8,9 @@ This format can be used for (half-)automated processes, where the receiver does 
 Also the CJWS2 format allows the data to be signed by multiple instances, each with its own certificate, and still compact serialization.
 
 In this project two types of Certificate-based Json Web Signatures are defined:
-- [CJWS1](#cjws-v1): compatible with the [JWS - RFC7515](https://www.rfc-editor.org/rfc/rfc7515)
-- [CJWS2](#cjws-v2): extended/modified JWS strcuture, not compatible
+- [CJWS1](#cjws1): compatible with the [JWS - RFC7515](https://www.rfc-editor.org/rfc/rfc7515)
+- [CJWS-JS](#cjws-js): compatible with the [JWS - RFC7515](https://www.rfc-editor.org/rfc/rfc7515)
+- [CJWS2](#cjws2): extended/modified JWS strcuture, not compatible
 
 ### Example Scenario
 
@@ -17,8 +18,8 @@ The german T-prescription was implemented as an application scenario, since it i
 
 [-> Prescription Scenario](CJWS/PrescriptionScenario)
 
-# CJWS v1
 
+# CJWS1
 
 ## The document
 A CJWS1 document consists of the following parts:
@@ -37,6 +38,7 @@ The strings are combined/joined using the '.' character:
 {
     "typ": "cjws1",
     "cty": "example-document-type",
+    "dsp": "Display Text",
     "alg": "RS512",
     "x5c": "...[BASE64]...",
     "day": "2023/03/31"
@@ -64,10 +66,41 @@ It also allows validating the digital signature for the given header and payload
 A document is valid if the certificate and digital signature are valid.
 
 
-# CJWS v2
+# CJWS-JS
 
 ## The document
-A Json Web Document consists of the following parts:
+A CJWS2 document consists of the following parts:
+- Payload
+- Signature(s)
+
+## Payload
+The payload can either be an object serialized to a json string given as UTF-8 byte array or a binary.  <br />
+The content type in the header should be set accordingly.
+
+## Signature
+~~~
+{
+    "protected": "...[BASE64]...",
+    "signature": "...[BASE64]..."
+}
+~~~
+Signature's protected header (same like the CJWS1 header):
+~~~
+{
+    "typ": "cjws-js",
+    "cty": "example-document-type",
+    "dsp": "Display Text",
+    "alg": "RS512",
+    "x5c": "...[BASE64]...",
+    "day": "2023/03/31"
+}
+~~~
+
+
+# CJWS2
+
+## The document
+A CJWS2 document consists of the following parts:
 - Header
 - Payload
 - Signature(s)
@@ -84,7 +117,8 @@ This format allows the extraction of the header without reading the complete str
 ~~~
 {
     "typ": "cjws2",
-    "cty": "example-document-type"
+    "cty": "example-document-type",
+    "dsp": "Display Text"
 }
 ~~~
 The header is compatible to a JWS header.
