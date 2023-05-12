@@ -18,6 +18,12 @@ The german T-prescription was implemented as an application scenario, since it i
 
 [-> Prescription Scenario](CJWS/PrescriptionScenario)
 
+### Library
+
+A .NET library for serializing and deserializing CJWS documents has also been implemented.
+
+[-> Library](CJWS/CJWS)
+
 
 # CJWS1
 
