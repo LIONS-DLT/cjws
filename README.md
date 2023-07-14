@@ -1,6 +1,6 @@
-Research project of the University of the Bundeswehr (German Federal Armed Forces)
-# LIONS
 LEDGER INNOVATION AND OPERATION NETWORK FOR SOVEREIGNTY
+# LIONS
+Research project of the University of the Bundeswehr (German Federal Armed Forces)
 
 LIONS is an interdisciplinary research project dealing with Digital Sovereignty, Resilience, Distributed Ledger Technology and Digital Identities. It builds technical and analytical competencies, provides a lab environment with real-world DLT infrastructure, and builds a community from the armed forces, government agencies, and the private sector.
 
