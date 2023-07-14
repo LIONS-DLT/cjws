@@ -7,6 +7,8 @@ LIONS is an interdisciplinary research project dealing with Digital Sovereignty,
 
 <sub><sup>Karl Seidenfad, Michael Hofmeier, Ulrike Lechner @ CODE Annual Convention</sup></sub>
 
+LIONS is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU.
+
 # CJWS - Certificate-based Json Web Signature
 This is an **EXPERIMENTAL** and **UNOFFICIAL** extension/modification of the standardized Json Web Signatures ([JWS - RFC7515](https://www.rfc-editor.org/rfc/rfc7515)).
 
