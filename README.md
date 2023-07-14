@@ -1,3 +1,9 @@
+Research project of the University of the Bundeswehr (German Federal Armed Forces)
+# LIONS
+LEDGER INNOVATION AND OPERATION NETWORK FOR SOVEREIGNTY
+
+LIONS is an interdisciplinary research project dealing with Digital Sovereignty, Resilience, Distributed Ledger Technology and Digital Identities. It builds technical and analytical competencies, provides a lab environment with real-world DLT infrastructure, and builds a community from the armed forces, government agencies, and the private sector.
+
 # CJWS - Certificate-based Json Web Signature
 This is an **EXPERIMENTAL** and **UNOFFICIAL** extension/modification of the standardized Json Web Signatures ([JWS - RFC7515](https://www.rfc-editor.org/rfc/rfc7515)).
 
