@@ -1,4 +1,3 @@
-LEDGER INNOVATION AND OPERATION NETWORK FOR SOVEREIGNTY
 # LIONS
 Research project of the University of the Bundeswehr (German Federal Armed Forces)
 
