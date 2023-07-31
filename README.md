@@ -171,4 +171,5 @@ A document is valid if ALL certificates and digital signatures are valid.
 
 ## Comparison CJWS-JS (JWS) and CJWS2
 The following figure shows the differencesof the JWS compatible format CJWS-JS and the JWS modification CJWS2 in terms of data protection:
+
 ![Team](figure_dataprotection.png)
