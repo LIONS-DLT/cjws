@@ -1,3 +1,14 @@
+# LIONS
+Research project of the University of the Bundeswehr (German Federal Armed Forces)
+
+LIONS is an interdisciplinary research project dealing with Digital Sovereignty, Resilience, Distributed Ledger Technology and Digital Identities. It builds technical and analytical competencies, provides a lab environment with real-world DLT infrastructure, and builds a community from the armed forces, government agencies, and the private sector.
+
+![Team](figure_team.png)
+
+<sub><sup>Karl Seidenfad, Michael Hofmeier, Ulrike Lechner @ CODE Annual Convention</sup></sub>
+
+LIONS is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr. dtec.bw is funded by the European Union – NextGenerationEU.
+
 # CJWS - Certificate-based Json Web Signature
 This is an **EXPERIMENTAL** and **UNOFFICIAL** extension/modification of the standardized Json Web Signatures ([JWS - RFC7515](https://www.rfc-editor.org/rfc/rfc7515)).
 
@@ -17,6 +28,12 @@ In this project two types of Certificate-based Json Web Signatures are defined:
 The german T-prescription was implemented as an application scenario, since it involves special requirements for signatures, data protection and data transfer. For this scenario, all the necessary applications and libraries are implemented in simple form.
 
 [-> Prescription Scenario](CJWS/PrescriptionScenario)
+
+### Library
+
+A .NET library for serializing and deserializing CJWS documents has also been implemented.
+
+[-> Library](CJWS/CJWS)
 
 
 # CJWS1
@@ -151,3 +168,8 @@ The contained certificate should be validated against its X.509 chain. <br />
 It also allows validating the digital signature for the given header, payload and date.
 
 A document is valid if ALL certificates and digital signatures are valid.
+
+## Comparison CJWS-JS (JWS) and CJWS2
+The following figure shows the differencesof the JWS compatible format CJWS-JS and the JWS modification CJWS2 in terms of data protection:
+
+![Team](figure_dataprotection.png)
