@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Instructor"
+             x:Class="InstructorsApplication.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="layout"
+            Spacing="25"
+            Padding="30,20"
+            VerticalOptions="Center">
+
+            <Image
+                Source="icon_star.png"
+                HeightRequest="100"
+                HorizontalOptions="Center" />
+
+
+            <Label
+                Text="Instructor's Application"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Load Certificate"
+                Clicked="OnClickLoadCert"
+                Padding="20"
+                Style="{StaticResource EntryButton}"
+                HorizontalOptions="Fill" />
+            
+            <Button
+                Text="Provide Ammunition Request"
+                Clicked="OnClickRequest"
+                Padding="20"
+                HorizontalOptions="Fill" />
+
+            <!--<Button
+                Text="Scan QR..."
+                Clicked="OnScanClick"
+                Padding="20"
+                HorizontalOptions="Fill" />-->
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

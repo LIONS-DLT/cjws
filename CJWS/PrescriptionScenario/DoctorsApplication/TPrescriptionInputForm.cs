@@ -118,8 +118,8 @@ namespace DoctorsApplication
 
         private void sharePrescription(string prescriptionString)
         {
-            string baseUrl = "http://192.168.178.98:5059/App";
-            string apiKey = "SGVsbG8gUHJlc2NyaXB0aW9uIEV4YW1wbGUh";
+            string baseUrl = PrescriptionScenarioConfig.DxsBaseUrl;
+            string apiKey = PrescriptionScenarioConfig.DxsApiKey;
 
             DataExchangeClient.DataExchangeService service = new DataExchangeClient.DataExchangeService(baseUrl, apiKey);
 

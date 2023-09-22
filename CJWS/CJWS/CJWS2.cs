@@ -133,18 +133,22 @@ namespace CJWS
         /// </summary>
         public override bool Verify()
         {
+            return Verify(true);
+        }
+
+        public bool Verify(bool validateCertificate)
+        {
             if (this.Signatures.Count == 0)
                 return false;
 
             foreach (CJWS2Signature signature in this.Signatures)
             {
-                if (!signature.Verify(this.Payload))
+                if (!signature.Verify(this.Payload, validateCertificate))
                     return false;
             }
 
             return true;
         }
-
     }
 
 }

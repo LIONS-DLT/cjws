@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InstructorsApplication.RequestPage"
+             Title="Provide Request">
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="layout"
+            Spacing="25"
+            Padding="30,20"
+            VerticalOptions="Center">
+
+            <Label Text="Order ID:" FontSize="20" HorizontalOptions="FillAndExpand" />
+            <Frame>
+                <Entry x:Name="inputOrderId" Placeholder="Order ID" Keyboard="Text" Text="O-123456789" />
+            </Frame>
+
+            <Label Text="Identifier:" FontSize="20" HorizontalOptions="FillAndExpand" />
+            <Frame>
+                <Entry x:Name="inputIdentifier" Placeholder="Identifier" Keyboard="Text" Text="310185-X-12345" />
+            </Frame>
+
+            <Label Text="Ammunition Type:" FontSize="20" HorizontalOptions="FillAndExpand" />
+            <Frame>
+                <!--<Entry x:Name="inputAmmunitionType" Placeholder="Identifier" Keyboard="Text" />-->
+                <Picker x:Name="inputAmmunitionType" Title="Ammunition Type">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>9×19mm NATO</x:String>
+                            <x:String>4.6×30mm NATO</x:String>
+                            <x:String>5.7×28mm NATO</x:String>
+                            <x:String>5.56×45mm NATO</x:String>
+                            <x:String>7.62×51mm NATO</x:String>
+                            <x:String>12.7×99mm NATO</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Frame>
+
+            <Label Text="Amount (Rounds):" FontSize="20" HorizontalOptions="FillAndExpand" />
+            <Frame>
+                <Entry x:Name="inputAmount" Placeholder="Identifier" Keyboard="Numeric" Text="100" />
+            </Frame>
+
+            <Button 
+                Text="Sign &amp; Send"
+                FontAttributes="Bold"
+                HorizontalOptions="Fill" Clicked="Button_Clicked_Send" />
+            <Button 
+                Text="Cancel"
+                FontAttributes="Bold"
+                Style="{StaticResource EntryButton}"
+                HorizontalOptions="Fill" Clicked="Button_Clicked_Cancel" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

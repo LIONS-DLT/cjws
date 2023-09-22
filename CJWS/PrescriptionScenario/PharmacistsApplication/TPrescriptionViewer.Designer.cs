@@ -65,7 +65,7 @@
             this.Controls.Add(this.button_signAndReturn);
             this.Controls.Add(this.textBox1);
             this.Name = "TPrescriptionViewer";
-            this.Text = "TPrescriptionViewer";
+            this.Text = "Prescription Data Viewer";
             this.ResumeLayout(false);
             this.PerformLayout();
 

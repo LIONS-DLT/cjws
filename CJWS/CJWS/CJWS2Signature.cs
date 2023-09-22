@@ -79,13 +79,13 @@ namespace CJWS
         /// <summary>
         /// Verifies the certificate by its X.509 chain and the signature for the given payload.
         /// </summary>
-        public bool Verify(byte[] payload)
+        public bool Verify(byte[] payload, bool validateCertificate = true)
         {
             byte[] dataToVerify = Encoding.UTF8.GetBytes(CJWS.EncodeUrlBase64(payload) + "." + this.Date);
 
             using (X509Certificate2 cert = CJWS.LoadCertificate(this))
             {
-                if(!cert.Verify())
+                if(validateCertificate && !cert.Verify())
                     return false;
                 if (this.Algorithm == CJWSAlgorithm.RS256)
                 {

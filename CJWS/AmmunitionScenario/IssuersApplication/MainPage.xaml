@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Issuer"
+             x:Class="IssuersApplication.MainPage">
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="layout"
+            Spacing="25"
+            Padding="30,20"
+            VerticalOptions="Center">
+
+            <Image
+                Source="icon_ammunition.png"
+                HeightRequest="100"
+                HorizontalOptions="Center" />
+
+
+            <Label
+                Text="Issuer's Application"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Load Certificate"
+                Clicked="OnClickLoadCert"
+                Padding="20"
+                Style="{StaticResource EntryButton}"
+                HorizontalOptions="Fill" />
+
+            <Button
+                Text="Issue Ammunition"
+                Clicked="OnClickIssue"
+                Padding="20"
+                HorizontalOptions="Fill" />
+
+            <Button
+                Text="Return Ammunition"
+                Clicked="OnClickReturn"
+                Padding="20"
+                HorizontalOptions="Fill" />
+
+            <!--<Button
+                Text="Scan QR..."
+                Clicked="OnScanClick"
+                Padding="20"
+                HorizontalOptions="Fill" />-->
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -80,7 +80,7 @@
             this.Controls.Add(this.btn_loadCert_Pharmacist);
             this.Controls.Add(this.btn_loadCert_Pharmacy);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Pharmacists Application";
             this.ResumeLayout(false);
 
         }
