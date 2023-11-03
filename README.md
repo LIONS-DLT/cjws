@@ -23,11 +23,15 @@ In this project two types of Certificate-based Json Web Signatures are defined:
 - [CJWS-JS](#cjws-js): compatible with the [JWS - RFC7515](https://www.rfc-editor.org/rfc/rfc7515)
 - [CJWS2](#cjws2): extended/modified JWS strcuture, not compatible
 
-### Example Scenario
+### Example Scenarios
 
-The german T-prescription was implemented as an application scenario, since it involves special requirements for signatures, data protection and data transfer. For this scenario, all the necessary applications and libraries are implemented in simple form.
+The german **T-prescription** was implemented as an application scenario, since it involves special requirements for signatures, data protection and data transfer. For this scenario, all the necessary applications and libraries are implemented in simple form.
 
 [-> Prescription Scenario](CJWS/PrescriptionScenario)
+
+For further validation, we implemented the military scenario of **ammunition issuance** for training purposes and added further validation mechanisms in the applications.
+
+[-> Ammunition Issuance Scenario](CJWS/AmmunitionScenario)
 
 ### Library
 
