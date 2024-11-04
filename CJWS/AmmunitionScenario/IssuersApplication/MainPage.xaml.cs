@@ -143,11 +143,11 @@ namespace IssuersApplication
             }
 
             CJWS2 document = CJWS2.Deserialize(cjwsString);
-            if (!document.Verify(false))
-            {
-                DisplayAlert("ERROR", "Document signatures invalid.", "OK");
-                return;
-            }
+            //if (!document.Verify(false))
+            //{
+            //    DisplayAlert("ERROR", "Document signatures invalid.", "OK");
+            //    return;
+            //}
             App.Current.MainPage.Navigation.PushAsync(new IssuePage(document));
         }
         private void openReturn(byte[] data)
@@ -162,11 +162,11 @@ namespace IssuersApplication
             }
 
             CJWS2 document = CJWS2.Deserialize(cjwsString);
-            if (!document.Verify(false))
-            {
-                DisplayAlert("ERROR", "Document signatures invalid.", "OK");
-                return;
-            }
+            //if (!document.Verify(false))
+            //{
+            //    DisplayAlert("ERROR", "Document signatures invalid.", "OK");
+            //    return;
+            //}
             App.Current.MainPage.Navigation.PushAsync(new ReturnPage(document));
         }
     }

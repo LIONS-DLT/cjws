@@ -35,6 +35,7 @@ public partial class ReturnPage : ContentPage
         foreach (var signature in requestCjws.Signatures)
         {
             sb.AppendLine(string.Format("{0}", CJWS2.LoadCertificate(signature).Subject));
+            sb.AppendLine(signature.Verify(requestCjws.Payload, false) ? "Signature is valid." : "Signature is INVALID!");
         }
         sb.AppendLine();
         sb.AppendLine();
@@ -44,6 +45,7 @@ public partial class ReturnPage : ContentPage
         foreach (var signature in receiptCjws.Signatures)
         {
             sb.AppendLine(string.Format("{0}", CJWS2.LoadCertificate(signature).Subject));
+            sb.AppendLine(signature.Verify(receiptCjws.Payload, false) ? "Signature is valid." : "Signature is INVALID!");
         }
 
         labelInfo.Text = sb.ToString();
